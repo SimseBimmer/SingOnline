@@ -1,3 +1,24 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // assets/javascript/main.js
 import { singOnlineModel } from './singonline.model.js';
 

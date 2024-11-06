@@ -1,3 +1,24 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // assets/javascript/funktions/randomSongs.js
 import { supabase } from '../supabase.js';
 

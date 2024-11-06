@@ -1,3 +1,13 @@
+
+
+
+
+
+
+
+
+
+
 // assets/javascript/singonline.model.js
 import { supabase } from './supabase.js';
 
