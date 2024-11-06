@@ -186,6 +186,30 @@ main {
   margin-top: 2rem;
 }
 
+.search {
+  background-color: white;
+  padding: 1rem;
+  width: -moz-fit-content;
+  width: fit-content;
+  display: flex;
+  position: relative;
+  padding: 0;
+}
+.search input {
+  border: none;
+}
+.search div {
+  border: 1px solid blue;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  width: 10%;
+}
+.search div img {
+  width: 100%;
+  height: auto;
+}
+
 footer {
   background-color: #232323;
   margin: 0;

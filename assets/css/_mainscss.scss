@@ -112,3 +112,31 @@ main {
     font-weight: 600;
     margin-top: 2rem;
 }
+
+.searchContainer{
+
+}
+
+// songs searchbar
+.search{
+    background-color: white;
+    padding: 1rem;
+    width: fit-content;
+    display: flex;
+    position: relative;
+    padding: 0;
+    input{
+        border: none;
+    }
+    div{
+        border: 1px solid blue;
+        margin: 0;
+        padding: 0;
+        position: absolute;
+        width: 10%;
+        img{
+            width: 100%;
+            height: auto;
+        }
+    }
+}
