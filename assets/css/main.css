@@ -1,0 +1,187 @@
+@import url("https://fonts.googleapis.com/css2?family=Anton+SC&family=Anuphan:wght@100..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Anton+SC&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+#headerContainer {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+header:first-of-type {
+  background-color: #232323;
+  margin: 0;
+  padding: 0.25rem 0;
+}
+
+.headerLogoContainer {
+  scale: 0.9;
+}
+.headerLogoContainer .headerLogo {
+  position: relative;
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  margin: 0;
+}
+.headerLogoContainer .headerLogo div {
+  position: absolute;
+  left: 80%;
+  top: 20%;
+}
+.headerLogoContainer .headerLogo div img {
+  margin: 0;
+  height: auto;
+  width: auto;
+}
+
+.topNav {
+  margin: auto 0;
+}
+.topNav ul {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  width: fit-content;
+}
+.topNav li a {
+  width: fit-content;
+  margin: 0 1rem;
+  font-family: "Anuphan", sans-serif;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 200;
+  color: #ffffff;
+  font-size: 1.8rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 6px;
+  transition: 300ms ease;
+}
+
+.topNav ul li a:hover {
+  opacity: 0.7;
+  background-color: #333;
+}
+
+.topNav ul li a:active {
+  color: #43BD2B;
+  text-decoration: underline;
+}
+
+body {
+  margin: 0;
+  background-color: #131313;
+}
+
+main {
+  font-family: "Montserrat", serif;
+  font-weight: 900;
+}
+
+.velkomst {
+  background-color: #232323;
+  width: 90%;
+  margin: 2rem auto;
+  border-radius: 12px;
+  padding: 1rem 0;
+}
+.velkomst p {
+  color: #ffffff;
+  font-weight: 400;
+  font-size: 1.1rem;
+  text-align: center;
+  width: 70%;
+  margin: 0 auto;
+}
+.velkomst hgroup h2 {
+  color: #ffffff;
+  font-weight: 900;
+  letter-spacing: 1px;
+  font-size: 1.6rem;
+  text-align: center;
+  margin: 0 0 0.5rem 0;
+  text-transform: uppercase;
+}
+.velkomst hgroup h2 span {
+  font-size: 2rem;
+}
+.velkomst ul {
+  width: fit-content;
+  max-width: 80%;
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0.5rem auto 0 auto;
+}
+.velkomst ul li {
+  color: #ffffff;
+  font-weight: 400;
+  font-size: 1.1rem;
+  text-align: center;
+  padding: 0.25rem 0.5rem;
+}
+.velkomst ul li a {
+  font-weight: 700;
+  color: #ffffff;
+  padding: 0.25rem 0.5rem;
+  text-decoration: none;
+  border-radius: 6px;
+  line-height: 1.62rem;
+}
+
+.velkomst ul li a:hover {
+  transition: 300ms ease;
+  opacity: 0.7;
+  background-color: #333;
+}
+
+.randomSongsContainer {
+  width: 70%;
+  margin: 0 auto;
+}
+.randomSongsContainer h2 {
+  color: #ffffff;
+  font-size: 1.4rem;
+  margin: 3rem 0 0 0;
+}
+
+.randomSongs {
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+}
+.randomSongs ol {
+  width: 100%;
+  text-align: center;
+  list-style: none;
+  padding: 0;
+}
+.randomSongs ol li {
+  background-color: #43BD2B;
+  border-radius: 14px;
+  margin: 0.7rem 0;
+  padding: 0.5rem 0.5rem;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+footer {
+  background-color: #232323;
+  padding: 0.1rem 0;
+}
+footer ul {
+  padding: 1rem 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin: 0 auto 0 auto;
+  text-align: center;
+  color: #ffffff;
+}
+footer ul li {
+  margin: auto;
+  font-family: "Montserrat", serif;
+}
+
+footer ul li:last-of-type {
+  width: 90%;
+}/*# sourceMappingURL=main.css.map */
