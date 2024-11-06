@@ -10,7 +10,7 @@
 header:first-of-type {
   background-color: #232323;
   margin: 0;
-  padding: 0.25rem 0;
+  padding: 0.3rem 0;
 }
 
 .headerLogoContainer {
@@ -18,6 +18,7 @@ header:first-of-type {
 }
 .headerLogoContainer .headerLogo {
   position: relative;
+  width: -moz-fit-content;
   width: fit-content;
   display: flex;
   align-items: center;
@@ -41,9 +42,11 @@ header:first-of-type {
   display: flex;
   list-style: none;
   padding: 0;
+  width: -moz-fit-content;
   width: fit-content;
 }
 .topNav li a {
+  width: -moz-fit-content;
   width: fit-content;
   margin: 0 1rem;
   font-family: "Anuphan", sans-serif;
@@ -80,9 +83,9 @@ main {
 .velkomst {
   background-color: #232323;
   width: 90%;
-  margin: 2rem auto;
+  margin: 3.25rem auto;
   border-radius: 12px;
-  padding: 1rem 0;
+  padding: 2.5rem 0;
 }
 .velkomst p {
   color: #ffffff;
@@ -105,6 +108,7 @@ main {
   font-size: 2rem;
 }
 .velkomst ul {
+  width: -moz-fit-content;
   width: fit-content;
   max-width: 80%;
   display: flex;
@@ -140,7 +144,7 @@ main {
 }
 .randomSongsContainer h2 {
   color: #ffffff;
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   margin: 3rem 0 0 0;
 }
 
@@ -159,21 +163,23 @@ main {
   background-color: #43BD2B;
   border-radius: 14px;
   margin: 0.7rem 0;
-  padding: 0.5rem 0.5rem;
+  padding: 0.75rem 0.5rem;
   color: #ffffff;
   font-weight: 600;
 }
 
 footer {
   background-color: #232323;
-  padding: 0.1rem 0;
+  margin: 0;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding: 0.1rem;
 }
 footer ul {
   padding: 1rem 0;
   list-style: none;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  margin: 0 auto 0 auto;
   text-align: center;
   color: #ffffff;
 }

@@ -1,9 +1,10 @@
 // assets/javascript/singonline.model.js
 import { supabase } from './supabase.js';
 
-
+/**
+ * SingOnline Model Class
+ */
 export class singOnlineModel {
-    // Metode til at hente sange
     async listSongs() {
         try {
             const { data, error } = await supabase.from('songs').select('*');
@@ -14,7 +15,6 @@ export class singOnlineModel {
         }
     }
 
-    // Metode til at hente kunstnere
     async listArtists() {
         try {
             const { data, error } = await supabase.from('artists').select('*');
@@ -25,7 +25,6 @@ export class singOnlineModel {
         }
     }
 
-    // Metode til at hente albums
     async listAlbums() {
         try {
             const { data, error } = await supabase.from('albums').select('*');
