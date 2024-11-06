@@ -1,58 +1,43 @@
+// Funktion til at hente tilfældige sange
+export async function getRandomSongs(songs, artists) {
+    const randomSongs = [];
+    const songIndexes = new Set();
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// assets/javascript/funktions/randomSongs.js
-import { supabase } from '../supabase.js';
-
-export async function displayRandomSongs() {
-    try {
-        // Hent alle sange fra databasen
-        const { data: songs, error: songError } = await supabase.from('songs').select('*');
-        if (songError) throw songError;
-
-        // Hent alle kunstnere
-        const { data: artists, error: artistError } = await supabase.from('artists').select('*');
-        if (artistError) throw artistError;
-
-        // Hent alle albums
-        const { data: albums, error: albumError } = await supabase.from('albums').select('*');
-        if (albumError) throw albumError;
-
-        // Vælg 10 tilfældige sange
-        const randomSongs = getRandomSongs(songs, 10);
-
-        // Log information om kunstnere, albums og sange
-        console.log('Artister:', artists);
-        console.log('Albums:', albums);
-        console.log('Sange:', randomSongs);
-
-        return randomSongs;
-    } catch (error) {
-        console.error('Error fetching random songs:', error);
-        return null;
+    // Sørger for at vi får 10 unikke sange
+    while (randomSongs.length < 10) {
+        const randomIndex = Math.floor(Math.random() * songs.length);
+        if (!songIndexes.has(randomIndex)) {
+            songIndexes.add(randomIndex);
+            randomSongs.push(songs[randomIndex]);
+        }
     }
+
+    // Tilknyt kunstneren til hver sang
+    const songsWithArtists = randomSongs.map(song => {
+        // Tjek om artist_id findes i artists-listen
+        const artist = artists.find(artist => artist.id === parseInt(song.artist_id)); // Ensretter datatyper
+        if (!artist) {
+            console.log(`Kunstner ikke fundet for sang: ${song.title}, artist_id: ${song.artist_id}`);
+        }
+        return { ...song, artistName: artist ? artist.name : 'Ukendt kunstner' };
+    });
+
+    return songsWithArtists;
 }
 
-// Funktion til at vælge tilfældige sange
-function getRandomSongs(songs, count) {
-    const shuffled = songs.sort(() => 0.5 - Math.random());
-    return shuffled.slice(0, count);
+// Funktion til at indsætte de tilfældige sange med kunstnernavn i HTML'en
+export function insertRandomSongs(songs) {
+    const songElements = document.querySelectorAll('.randomSang');
+
+    // Sørg for, at vi kun indsætter 10 sange
+    songElements.forEach((li, index) => {
+        if (songs[index]) {
+            const titleSpan = li.querySelector('.randomSongTitle');
+            const artistSpan = li.querySelector('.randomSongArtist');
+
+            // Indsæt sangtitel og kunstner i de respektive spans
+            titleSpan.textContent = songs[index].title;
+            artistSpan.textContent = ` - ${songs[index].artistName || 'Ukendt kunstner'}`; // Tilføjer bindestrej mellem sang og kunstner, og 'Ukendt kunstner' hvis ingen kunstner er tilgængelig
+        }
+    });
 }
