@@ -1,51 +1,51 @@
-// assets/javascript/funktions/searchSongs.js
-
 export function searchSongs(query, songs, artists) {
-    // Fjern alle tidligere søgeresultater
     const resultsContainer = document.getElementById('songs');
-    resultsContainer.innerHTML = ''; // Dette fjerner de gamle li'er, så de ikke står tilbage
+    resultsContainer.innerHTML = '';
 
-    // Hvis søgefeltet er tomt, returner og skjul containeren
     if (query === '') {
-        resultsContainer.style.display = 'none'; // Skjul #songs hvis søgefeltet er tomt
+        resultsContainer.style.display = 'none';
         return;
     }
-    resultsContainer.style.display = 'block'; // Vis #songs hvis der er tekst i søgefeltet
+    resultsContainer.style.display = 'block';
 
-    // Konverter søgeforespørgslen til små bogstaver for at gøre søgningen case-insensitiv
     const queryLower = query.toLowerCase();
 
-    // Filtrer sange baseret på input, men kun hvis 'song.title' og 'song.artist' er definerede
     const filteredSongs = songs.filter(song => {
         const titleMatch = song.title && song.title.toLowerCase().includes(queryLower);
         const artistMatch = song.artist && song.artist.toLowerCase().includes(queryLower);
         return titleMatch || artistMatch;
     });
 
-    // Filtrer kunstnere, men kun hvis 'artist.name' er defineret
-    const filteredArtists = artists.filter(artist =>
-        artist.name && artist.name.toLowerCase().includes(queryLower)
-    );
+    const searchResults = filteredSongs;
 
-    // Kombiner både sange og kunstnere i én liste
-    const searchResults = [...filteredSongs, ...filteredArtists];
-
-    // Log alle søgeresultater til konsollen
     console.log("Søgeresultater:", searchResults);
 
-    // Hvis der er resultater, vis dem
     if (searchResults.length > 0) {
         searchResults.forEach(result => {
             const li = document.createElement('li');
-            li.textContent = result.title || result.name; // For sange, vis titel; for kunstnere, vis navn
-            resultsContainer.appendChild(li); // Tilføj hver li til ul'en
+            
+            // Opret et <a> element og sæt det op til at navigere til chosenSong.html
+            const link = document.createElement('a');
+            link.textContent = `${result.title} - ${result.artist}`;
+            link.href = 'chosenSong.html'; // Naviger til chosenSong.html
+            
+            // Tilføj en click-event listener til <a> elementet
+            link.addEventListener('click', (event) => {
+                event.preventDefault(); // Forhindre standard navigation
+
+                // Gem sangdataen i sessionStorage
+                sessionStorage.setItem('selectedSong', JSON.stringify(result));
+
+                // Naviger til chosenSong.html efter dataen er gemt
+                window.location.href = 'chosenSong.html';
+            });
+
+            li.appendChild(link);
+            resultsContainer.appendChild(li); // Tilføj <li> til ul'en
         });
     } else {
-        // Hvis ingen resultater findes, kan vi vise en besked
         const noResultsLi = document.createElement('li');
         noResultsLi.textContent = 'Ingen resultater fundet';
         resultsContainer.appendChild(noResultsLi);
     }
 }
-// k
-

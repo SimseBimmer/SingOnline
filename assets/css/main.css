@@ -241,31 +241,43 @@ main {
 }
 
 #searchResults {
-  width: 80%;
-  pointer-events: none;
+  width: 100%;
+  position: absolute;
+  top: 100%;
+  border: 1px solid red;
 }
 
 #songs {
   font-weight: 600;
   font-size: 1.3rem;
-  background-color: #ffffff;
+  background-color: #232323;
   box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
   width: -moz-fit-content;
   width: fit-content;
-  padding: 0.25rem 1rem;
+  padding: 0.25rem;
   border-radius: 12px;
   position: absolute;
-  top: 100%;
+  top: -0.75rem;
   margin: 1rem 0;
   display: flex;
   flex-direction: column;
   display: none;
-  /* Skjul som standard */
 }
 #songs li {
   color: #232323;
   font-weight: 600;
   text-align: left;
+  color: red;
+}
+#songs li a {
+  cursor: pointer;
+  border-radius: 0;
+  width: 100%;
+  transition: 300ms ease-in-out;
+}
+#songs li a:hover {
+  color: lime;
+  margin-left: 1rem;
 }
 
 #songs li::first-letter {
@@ -331,7 +343,11 @@ main {
   margin: 0 auto 0 0;
   text-align: left;
   font-weight: 400;
-  font-size: 1.3rem;
+  font-size: 1rem;
+  border: 1px solid red;
+}
+#lyricsAboutContainer #lyricsSection #lyricsContent br {
+  margin: 2rem;
 }
 #lyricsAboutContainer #aboutSong {
   max-width: 20%;
