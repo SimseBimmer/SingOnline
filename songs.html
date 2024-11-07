@@ -41,20 +41,46 @@
             <div>
                 <hgroup>
                     <h2>songs</h2>
+                    
                 </hgroup>
-                <p>Her kan du søge blandt tusindvis af sange og kunstnere. Indtast titlen på en sang eller navnet på en kunstner, og få øjeblikkelig adgang til sangtekster og akkorder. Uanset om du vil lære en ny melodi på guitar, eller blot synge med, har vi det hele!</p>
+                <p>Her kan du søge blandt tusindvis af sange og kunstnere. Indtast titlen på en sang eller navnet på en
+                    kunstner, og få øjeblikkelig adgang til sangtekster og akkorder. Uanset om du vil lære en ny melodi
+                    på guitar, eller blot synge med, har vi det hele!</p>
                 <p id="thicc">Søg nu og kom i gang med at spille eller synge dine yndlingssange!</p>
             </div>
             <!-- search -->
             <div class="searchContainer">
                 <!-- søgefelt -->
                 <div class="search">
-                    <input type="search">
+                    <input type="text" id="searchInput" placeholder="Type keyword..." autocomplete="off">
+                    <div id="searchResults">
+                        <ul id="songs">
+                            
+                        </ul>
+                    </div>
                     <div>
                         <img src="assets/images/Search.svg">
                     </div>
                 </div>
-
+                <!-- 5 tilfældige sange -->
+                <div class="randomSongsContainer" id="fiveSongs">
+                    <h2 id="fiveSongsHeader">Fandt <span>12</span> resultater</h2>
+                    <!-- 5 sange -->
+                    <div class="randomSongs">
+                        <ol>
+                            <li class="randomSang"><span class="randomSongTitle">...</span><span
+                                    class="randomSongArtist"></span></li>
+                            <li class="randomSang"><span class="randomSongTitle">...</span><span
+                                    class="randomSongArtist"></span></li>
+                            <li class="randomSang"><span class="randomSongTitle">...</span><span
+                                    class="randomSongArtist"></span></li>
+                            <li class="randomSang"><span class="randomSongTitle">...</span><span
+                                    class="randomSongArtist"></span></li>
+                            <li class="randomSang"><span class="randomSongTitle">...</span><span
+                                    class="randomSongArtist"></span></li>
+                        </ol>
+                    </div>
+                </div>
             </div>
 
 
@@ -64,10 +90,11 @@
 
             <!-- 10 tilfældige sange -->
             <div class="randomSongsContainer">
-                
+
             </div>
         </section>
     </main>
+    
     <!-- #endregion MAIN -->
     <!-- #region FOOTER -->
     <footer>
@@ -77,7 +104,6 @@
             <li>Terms • Privacy • Cookies • Copyright • Acknowledgments</li>
         </ul>
     </footer>
-    
     <!-- #endregion FOOTER -->
 </body>
 

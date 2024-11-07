@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sing Online</title>
+    <link rel="stylesheet" href="assets/css/main.css">
+    <script defer type="module" src="assets/javascript/main.js"></script>
+    <!-- Link til print-funktion script -->
+    <script defer type="module" src="assets/javascript/printLyrics.js"></script> 
+</head>
+
+<body>
+    <!-- #region HEADER -->
+    <header>
+        <div id="headerContainer">
+            <!-- SINGONLINE Logo -->
+            <div class="headerLogoContainer">
+                <div class="headerLogo">
+                    <img src="assets/images/logoImage.svg" alt="Logo">
+                    <div>
+                        <img src="assets/images/logoText.svg" alt="Logo Text">
+                    </div>
+                </div>
+            </div>
+            <nav class="topNav">
+                <ul>
+                    <li><a href="index.html">home</a></li>
+                    <li><a href="songs.html" id="home">songs</a></li>
+                    <li><a href="#">artists</a></li>
+                    <li><a href="#">login</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <!-- #endregion HEADER -->
+
+    <!-- #region MAIN -->
+    <main>
+        <!-- site content -->
+        <section class="velkomst">
+            <div id="songDetails">
+                <div id="titleAndPrint">
+                    <h2 id="songTitle"><span>Song Title</span></h2> <!-- Titel på sangen -->
+                    <button id="printButton" class="printBtn">Print</button> <!-- Print knap -->
+                </div>
+                <h3 id="artistName">By <span>Artist Name</span></h3> <!-- Kunstnerens navn -->
+            </div>
+
+            <div id="lyricsAboutContainer">
+                <!-- lyrics -->
+                <div id="lyricsSection">
+                    <div id="lyricsContainer" class="scrollable">
+                        <p id="lyricsContent">
+                            waaa waaa waaa waaa waaa
+                        </p>
+                    </div>
+                </div>
+
+                <!-- about -->
+                <div id="aboutSong">
+                    <p id="aboutText">
+                        Her vil info om sangen blive indsat
+                    </p>
+                </div>
+            </div>
+
+            <!-- created at -->
+            <div id="createdAt">
+                <p id="createdAtText">
+                    Her vil created_at datoen blive indsat
+                </p>
+            </div>
+        </section>
+
+    </main>
+    <!-- #endregion MAIN -->
+
+    <!-- #region FOOTER -->
+    <footer>
+        <ul>
+            <li>© 2024 Sing Online, Inc. All Rights Reserved.</li>
+            <li><img src="assets/images/logoText2.svg" alt="Logo Text"></li>
+            <li>Terms • Privacy • Cookies • Copyright • Acknowledgments</li>
+        </ul>
+    </footer>
+    <!-- #endregion FOOTER -->
+</body>
+
+</html>

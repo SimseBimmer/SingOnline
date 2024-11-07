@@ -74,7 +74,7 @@ main {
 }
 
 .randomSongsContainer {
-    width: 70%;
+    width: 60%;
     margin: 0 auto;
 
     h2 {
@@ -82,6 +82,18 @@ main {
         font-size: 1.6rem;
         margin: 3rem 0 0 0;
     }
+}
+
+#fiveSongs {
+    margin: 0;
+}
+
+#fiveSongsHeader {
+    font-weight: 400;
+}
+
+#fiveSongsHeader span {
+    font-weight: 700;
 }
 
 .randomSongs {
@@ -108,35 +120,190 @@ main {
     }
 }
 
-#thicc{
+#thicc {
     font-weight: 600;
     margin-top: 2rem;
 }
 
-.searchContainer{
-
+// #region Songs Page
+.searchContainer {
+    margin: 5rem auto;
+    width: 70%;
 }
 
-// songs searchbar
-.search{
+
+.search {
     background-color: white;
-    padding: 1rem;
-    width: fit-content;
+    border-radius: 18px;
+
+    width: 503px;
+    height: 51px;
     display: flex;
     position: relative;
     padding: 0;
-    input{
+
+    input {
         border: none;
+        background-color: transparent;
+        margin: 0 0 0 4rem;
+        padding: 0;
+        height: 100%;
+        width: 420px;
+        font-size: 1.4rem;
     }
-    div{
-        border: 1px solid blue;
+
+    input:focus {
+        outline: none;
+    }
+
+    div {
         margin: 0;
         padding: 0;
         position: absolute;
-        width: 10%;
-        img{
+        width: 32px;
+        height: 32px;
+        left: 1rem;
+        top: .65rem;
+        bottom: 0;
+
+        img {
             width: 100%;
             height: auto;
+            pointer-events: none;
         }
     }
 }
+
+#searchResults {
+    width: 80%;
+    pointer-events: none;
+}
+
+#songs {
+    font-weight: 600;
+    font-size: 1.3rem;
+    background-color: $white;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, .2);
+
+    width: fit-content;
+    padding: .25rem 1rem;
+    border-radius: 12px;
+
+    position: absolute;
+    top: 100%;
+    margin: 1rem 0;
+    display: flex;
+    flex-direction: column;
+    display: none;
+    /* Skjul som standard */
+
+    li {
+        color: $grey;
+        font-weight: 600;
+        text-align: left;
+    }
+}
+
+#songs li::first-letter {
+    text-transform: uppercase;
+}
+
+// #endregion Songs Page
+
+// #region chosenSong Page
+#songDetails {
+    width: 90%;
+    margin: 0 auto;
+
+    #titleAndPrint {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        margin: 0 auto;
+
+        #songTitle {
+            color: $white;
+            font-size: 1.8rem;
+            margin: auto 0;
+        }
+
+        #songTitle::first-letter {
+            text-transform: uppercase;
+            font-size: 2rem;
+        }
+
+        #printButton {
+            background-color: $green;
+            width: fit-content;
+            height: fit-content;
+            font-size: 1.5rem;
+            color: $white;
+            border-radius: 16px;
+            padding: .5rem 4rem;
+            margin: auto 0;
+            border: none;
+            cursor: pointer;
+        }
+    }
+
+    #artistName {
+        margin: .5rem 0;
+        color: $white;
+        font-weight: 600;
+    }
+}
+
+#lyricsSection {
+    color: $white;
+    width: 90%;
+    margin: 4rem auto;
+
+    #lyricsContainer {}
+
+    .scrollable {}
+}
+
+#lyricsAboutContainer {
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+    width: 90%;
+    margin: 2rem auto;
+
+    #lyricsSection {
+        width: 80%;
+
+        #lyricsContent {
+            width: 90%;
+            margin: 0 auto 0 0;
+            text-align: left;
+            font-weight: 400;
+            font-size: 1.3rem;
+        }
+    }
+
+    #aboutSong {
+        max-width: 20%;
+
+        p {
+            font-size: 1.2rem;
+            text-align: left;
+            margin: 0 auto 0 0;
+        }
+    }
+}
+
+#createdAt {
+    width: 90%;
+    margin: 0 auto;
+
+    p {
+        text-align: left;
+        margin: 0 auto 0 0;
+        font-size: 1.2rem;
+        font-weight: 300;
+    }
+}
+
+
+// #endregion chosenSong Page

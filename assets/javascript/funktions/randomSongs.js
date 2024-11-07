@@ -1,3 +1,5 @@
+// assets/javascript/funktions/randomSongs.js
+
 // Funktion til at hente tilfældige sange
 export async function getRandomSongs(songs, artists) {
     const randomSongs = [];
@@ -14,11 +16,7 @@ export async function getRandomSongs(songs, artists) {
 
     // Tilknyt kunstneren til hver sang
     const songsWithArtists = randomSongs.map(song => {
-        // Tjek om artist_id findes i artists-listen
-        const artist = artists.find(artist => artist.id === parseInt(song.artist_id)); // Ensretter datatyper
-        if (!artist) {
-            console.log(`Kunstner ikke fundet for sang: ${song.title}, artist_id: ${song.artist_id}`);
-        }
+        const artist = artists.find(artist => artist.id === song.artist_id);
         return { ...song, artistName: artist ? artist.name : 'Ukendt kunstner' };
     });
 
